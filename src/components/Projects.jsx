@@ -65,7 +65,7 @@ export default function Projects({ lang = "en" }) {
           tech: ["JavaScript", "CSS", "HTML"],
           image: "/christmascalendar.png",
           github: "https://github.com/Alexandre1422/christmascalendar",
-          demo: "https://demo.com/project2",
+          demo: "https://aquamarine-churros-b348ab.netlify.app/",
         },
         {
           id: 3,
@@ -73,8 +73,7 @@ export default function Projects({ lang = "en" }) {
           description: "Un projet de groupe pour le rendu 3D de cubes forké sur ComputeShaderStudio.",
           tech: ["GDScript", "Godot", "Compute Shaders"],
           image: "/cube.png",
-          github: "https://github.com/mahboubiabdelkader/ComputeShaderStudio",
-          demo: "https://demo.com/project3",
+          github: "https://github.com/mahboubiabdelkader/ComputeShaderStudio"
         },
         {
           id: 4,
