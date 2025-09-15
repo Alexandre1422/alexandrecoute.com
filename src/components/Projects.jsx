@@ -26,7 +26,7 @@ export default function Projects({ lang = "en" }) {
           tech: ["JavaScript", "CSS", "HTML"],
           image: "/christmascalendar.png",
           github: "https://github.com/Alexandre1422/christmascalendar",
-          demo: "https://demo.com/project2",
+          demo: "https://christmascalendaralex.netlify.app/",
         },
         {
           id: 3,
