@@ -1,0 +1,132 @@
+:root {
+  --cube-size: 15px;
+  --cube-thick: 1.5px;
+}
+
+.helix {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: rotateHelix 20s linear infinite;
+  margin-top: 0px;    /* pousse un peu vers le haut */
+  margin-bottom: 320px; /* espace avec le titre */
+}
+
+@keyframes rotateHelix {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.cube {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+}
+
+.edge {
+  backface-visibility: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  background: #63ffdb;
+  width: var(--cube-size);
+  height: var(--cube-thick);
+  margin-left: calc(-1 * var(--cube-size) / 2);
+  margin-top: calc(-1 * var(--cube-thick) / 2);
+}
+
+/* Arêtes verticales 9 à 12 avec rotation compensée */
+/*
+.edge:nth-child(9) {
+  width: var(--cube-thick);
+  height: var(--cube-size);
+  margin-left: calc(-1*var(--cube-thick)/2);
+  margin-top: calc(-1*var(--cube-size)/2);
+  animation: keepVertical9 20s linear infinite;
+}
+
+@keyframes keepVertical9 {
+  0%   { transform: translateX(calc(-1*var(--d))) translateZ(var(--d)) rotateY(0deg); }
+  100% { transform: translateX(calc(-1*var(--d))) translateZ(var(--d)) rotateY(-360deg); }
+}
+
+.edge:nth-child(10) {
+  width: var(--cube-thick);
+  height: var(--cube-size);
+  margin-left: calc(-1*var(--cube-thick)/2);
+  margin-top: calc(-1*var(--cube-size)/2);
+  animation: keepVertical10 20s linear infinite;
+}
+
+@keyframes keepVertical10 {
+  0%   { transform: translateX(var(--d)) translateZ(var(--d)) rotateY(0deg); }
+  100% { transform: translateX(var(--d)) translateZ(var(--d)) rotateY(-360deg); }
+}
+
+.edge:nth-child(11) {
+  width: var(--cube-thick);
+  height: var(--cube-size);
+  margin-left: calc(-1*var(--cube-thick)/2);
+  margin-top: calc(-1*var(--cube-size)/2);
+  animation: keepVertical11 20s linear infinite;
+}
+
+@keyframes keepVertical11 {
+  0%   { transform: translateX(var(--d)) translateZ(calc(-1*var(--d))) rotateY(0deg); }
+  100% { transform: translateX(var(--d)) translateZ(calc(-1*var(--d))) rotateY(-360deg); }
+}
+
+.edge:nth-child(12) {
+  width: var(--cube-thick);
+  height: var(--cube-size);
+  margin-left: calc(-1*var(--cube-thick)/2);
+  margin-top: calc(-1*var(--cube-size)/2);
+  animation: keepVertical12 20s linear infinite;
+}
+
+@keyframes keepVertical12 {
+  0%   { transform: translateX(calc(-1*var(--d))) translateZ(calc(-1*var(--d))) rotateY(0deg); }
+  100% { transform: translateX(calc(-1*var(--d))) translateZ(calc(-1*var(--d))) rotateY(-360deg); }
+}
+*/
+
+
+.edge:nth-child(9),
+.edge:nth-child(10),
+.edge:nth-child(11),
+.edge:nth-child(12) {
+  width: var(--cube-thick);
+  height: var(--cube-size);
+  margin-left: calc(-1*var(--cube-thick)/2);
+  margin-top: calc(-1*var(--cube-size)/2);
+  animation: keepVertical 20s linear infinite;
+}
+
+.cube { --d: calc(var(--cube-size) / 2); }
+
+/* Arêtes horizontales (haut) */
+.edge:nth-child(1)  { transform: translateY(calc(-1*var(--d))) translateZ(var(--d)) rotateY(0deg); }
+.edge:nth-child(2)  { transform: translateY(calc(-1*var(--d))) translateX(var(--d)) rotateY(90deg); }
+.edge:nth-child(3)  { transform: translateY(calc(-1*var(--d))) translateZ(calc(-1*var(--d))) rotateY(0deg); }
+.edge:nth-child(4)  { transform: translateY(calc(-1*var(--d))) translateX(calc(-1*var(--d))) rotateY(90deg); }
+
+/* Arêtes horizontales (bas) */
+.edge:nth-child(5)  { transform: translateY(var(--d)) translateZ(var(--d)) rotateY(0deg); }
+.edge:nth-child(6)  { transform: translateY(var(--d)) translateX(var(--d)) rotateY(90deg); }
+.edge:nth-child(7)  { transform: translateY(var(--d)) translateZ(calc(-1*var(--d))) rotateY(0deg); }
+.edge:nth-child(8)  { transform: translateY(var(--d)) translateX(calc(-1*var(--d))) rotateY(90deg); }
+
+/* Arêtes verticales (avant et arrière) */
+.edge:nth-child(9)  { transform: translateX(calc(-1*var(--d))) translateZ(var(--d)); }
+.edge:nth-child(10) { transform: translateX(var(--d)) translateZ(var(--d)); }
+.edge:nth-child(11) { transform: translateX(var(--d)) translateZ(calc(-1*var(--d))); }
+.edge:nth-child(12) { transform: translateX(calc(-1*var(--d))) translateZ(calc(-1*var(--d))); }
+
+/* Nouvelles arêtes verticales (côtés gauche/droite, en doublon) */
+.edge:nth-child(13)  { transform: translateX(calc(-1*var(--d))) translateZ(var(--d)); }
+.edge:nth-child(10) { transform: translateX(var(--d)) translateZ(var(--d)); }
+.edge:nth-child(11) { transform: translateX(var(--d)) translateZ(calc(-1*var(--d))); }
+.edge:nth-child(12) { transform: translateX(calc(-1*var(--d))) translateZ(calc(-1*var(--d))); }

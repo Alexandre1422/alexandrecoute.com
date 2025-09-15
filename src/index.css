@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(12);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(30);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+
+.animate-pulse {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+body {
+  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
+  font-family: 'Quicksand', sans-serif;
+}
+.highlight {
+  font-weight: bold;
+  color: rgb(99, 255, 219); /* ton vert */
+}
+
+/* Curseur animé vert */
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: bold;
+  color: rgb(99, 255, 219);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
