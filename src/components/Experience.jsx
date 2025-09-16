@@ -67,10 +67,10 @@ export default function Experience({ lang = "en" }) {
     fr: {
       title: "/ experience",
       experiences: [
-        { id: "ub", company: "Université de Bretagne Occidentale", role: "Stagiaire chercheur", period: "AVR 2025 - JUIN 2025", description: "Recherche sur des algorithmes répondant aux problèmes d'allocation de tâches pour des systèmes multi-robot. Implémentation et test de l'algorithme hongrois et du Q-learning sur CoppeliaSim." },
-        { id: "ys", company: "Yvon Salaun", role: "Stagiaire développeur et concepteur web", period: "AVR 2024 - JUIN 2024", description: "Refonte du site vitrine de l'entreprise. Ajout d'une partie administration concernant les demandes clients et l'inventaire du magasin de dépannage. Site : depannagesalaun.fr" },
-        { id: "aei", company: "AEI Services", role: "Stagiaire développeur et concepteur web", period: "DEC 2022 - JAN 2023", description: "Refonte d'une application web interne à l'entreprise de gestion de clientele, de demande clientele et de calcul de temps par tâches pour des réparations d'objets. Développement d'outils internes pour améliorer la productivité." },
-        { id: "cy", company: "Cyllene", role: "Stagiaire développeur web", period: "MAI 2022 - JUIN 2022", description: "Réalisation d'une application web permettant le calcul de feuille de marge pour un garage. Calcul des bénéfices réalisé pour chaque opération d'un employé. Export de ces feuilles de marges sous différents formats." }
+        { id: "ub", company: "Université de Bretagne Occidentale", role: "Stagiaire chercheur", period: "AVR 2025 - JUIN 2025", description: "Recherche sur des algorithmes d’allocation de tâches pour des systèmes multi-robots. Implémentation et tests de l’algorithme hongrois et du Q-learning sur CoppeliaSim." },
+        { id: "ys", company: "Yvon Salaun", role: "Stagiaire développeur et concepteur web", period: "AVR 2024 - JUIN 2024", description: "Refonte du site vitrine de l’entreprise, avec l’ajout d’une interface d’administration pour la gestion des demandes clients et de l’inventaire du magasin de dépannage. Site : depannagesalaun.fr" },
+        { id: "aei", company: "AEI Services", role: "Stagiaire développeur et concepteur web", period: "DEC 2022 - JAN 2023", description: "Refonte d’une application web interne dédiée à la gestion de la clientèle, aux demandes clients et au calcul du temps par tâche pour les réparations d’objets. Développement d’outils internes visant à améliorer la productivité." },
+        { id: "cy", company: "Cyllene", role: "Stagiaire développeur web", period: "MAI 2022 - JUIN 2022", description: "Réalisation d’une application web permettant le calcul des feuilles de marge pour un garage. Suivi des bénéfices générés par chaque opération réalisée par un employé, avec export des feuilles de marge dans différents formats." }
       ]
     }
   };

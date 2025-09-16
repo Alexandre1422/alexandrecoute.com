@@ -70,7 +70,7 @@ export default function Projects({ lang = "en" }) {
         {
           id: 3,
           title: "Cube Compute Shader",
-          description: "Un projet de groupe pour le rendu 3D de cubes forké sur ComputeShaderStudio.",
+          description: "Un projet de groupe de rendu 3D de cubes forké sur ComputeShaderStudio.",
           tech: ["GDScript", "Godot", "Compute Shaders"],
           image: "/cube.png",
           github: "https://github.com/mahboubiabdelkader/ComputeShaderStudio"
