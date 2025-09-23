@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Helix from "./Helix";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 
 export default function Home({ lang = "en" }) {
   const texts = {
@@ -50,23 +51,54 @@ export default function Home({ lang = "en" }) {
 
 
       {/* Phrase d'accroche */}
-      <p className="mt-4 text-blue-gray text-2xl sm:text-2xl md:text-4xl text-muted-foreground">
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="mt-4 text-blue-gray text-2xl sm:text-2xl md:text-4xl text-muted-foreground"
+      >
         {texts[lang].subtitle}
-      </p>
+      </motion.p>
 
       {/* Description */}
-      <p className="mt-6 text-blue-gray max-w-2xl text-base sm:text-lg md:text-xl text-foreground/80">
-        {texts[lang].description}
-      </p>
-
-      {/* Bouton mailto */}
-      <a
-        href="mailto:alexandrecoute@outlook.fr"
-        className="mt-6 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-teal-400 text-white font-medium hover:bg-teal-500 transition-all"
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="mt-6 text-blue-gray max-w-2xl text-base sm:text-lg md:text-xl text-foreground/80"
       >
-        <FaEnvelope className="text-lg" />
-        {lang === "en" ? "Say hi!" : "Dis bonjour !"}
-      </a>
+        {texts[lang].description}
+      </motion.p>
+
+      {/* Boutons d’action */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        viewport={{ once: true }}
+        className="mt-6 flex gap-4"
+      >
+        {/* Bouton mailto */}
+        <a
+          href="mailto:alexandrecoute@outlook.fr"
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-teal-400 text-white font-medium hover:bg-teal-500 transition-all"
+        >
+          <FaEnvelope className="text-lg" />
+          {lang === "en" ? "Say hi!" : "Dis bonjour !"}
+        </a>
+
+        {/* Bouton CV / Resume */}
+        <a
+          href="/Alexandre_Couté_Resume.pdf" // mets ton vrai fichier PDF dans /public
+          download
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 hover:bg-gray-300 font-medium text-teal-400 transition-all"
+        >
+          <FaDownload className="text-lg" />
+          {lang === "en" ? "Resume" : "CV"}
+        </a>
+      </motion.div>
     </section>
   );
 }

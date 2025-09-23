@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -154,18 +156,28 @@ export default function Projects({ lang = "en" }) {
       className="mb-20 bg-background text-foreground px-6 py-16 max-w-5xl mx-auto"
     >
       {/* Titre */}
-      <div className="flex items-center mt-10 mb-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="flex items-center mt-10 mb-12"
+      >
         <h2 className="flex items-center gap-4 text-4xl font-black">
           <span>{texts[lang].title}</span>
         </h2>
         <div className="flex-1 h-px bg-gray-700 ml-4"></div>
-      </div>
+      </motion.div>
 
       {/* Carrousel */}
-      <div
+      <motion.div
         className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        initial={{ scale: 0.8, opacity: 0 }}     // état au départ (petit + transparent)
+        whileInView={{ scale: 1, opacity: 1 }}   // état quand visible à l’écran
+        transition={{ duration: 0.8, ease: "easeOut" }} // vitesse et fluidité
+        viewport={{ once: true, amount: 0.3 }}   // déclenche quand 30% visible
       >
         <div
           className={`flex h-full ${
@@ -237,7 +249,7 @@ export default function Projects({ lang = "en" }) {
         >
           <FaChevronRight />
         </button>
-      </div>
+      </motion.div>
 
       {/* Pagination */}
       <div className="flex justify-center mt-6 gap-2">

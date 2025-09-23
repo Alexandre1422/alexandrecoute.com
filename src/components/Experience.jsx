@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function RippleButton({ exp, selected, setSelected }) {
   const [ripples, setRipples] = useState([]);
@@ -58,7 +59,7 @@ export default function Experience({ lang = "en" }) {
     en: {
       title: "/ experience",
       experiences: [
-        { id: "ub", company: "University of Western Brittany", role: "Research Intern", period: "APR 2025 - JUN 2025", description: "Research on algorithms addressing multi-robot task allocation problems. Implementation and testing of the Hungarian algorithm and Q-learning on CoppeliaSim." },
+        { id: "ub", company: "Université de Bretagne Occidentale", role: "Research Intern", period: "APR 2025 - JUN 2025", description: "Research on algorithms addressing multi-robot task allocation problems. Implementation and testing of the Hungarian algorithm and Q-learning on CoppeliaSim." },
         { id: "ys", company: "Yvon Salaun", role: "Web Developer and Designer Intern", period: "APR 2024 - JUN 2024", description: "Redesign of the company's showcase website. Added an administration section for customer requests and inventory management for the repair shop. Website: depannagesalaun.fr" },
         { id: "aei", company: "AEI Services", role: "Web Developer and Designer Intern", period: "DEC 2022 - JAN 2023", description: "Redesign of an internal web application for managing clients, client requests, and time tracking for repair tasks. Developed internal tools to improve productivity." },
         { id: "cy", company: "Cyllene", role: "Web Developer Intern", period: "MAY 2022 - JUN 2022", description: "Created a web application for calculating profit sheets for a garage. Calculated profits for each operation performed by an employee. Exported these profit sheets in various formats." }
@@ -83,17 +84,29 @@ export default function Experience({ lang = "en" }) {
       id="experience"
       className="bg-background text-foreground px-6 py-8 max-w-5xl mx-auto"
     >
-      <div className="flex items-center mt-10 mb-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="flex items-center mt-10 mb-12"
+      >
         <h2 className="flex items-center gap-4 text-4xl font-black">
           <span>{texts[lang].title}</span>
         </h2>
         <div className="flex-1 h-px bg-gray-700 ml-4"></div>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col md:flex-row gap-12">
         {/* Liste des expériences */}
-        <div className="flex flex-col gap-4 text-sm font-mono relative md:w-1/3">
-          {texts.en.experiences.map((exp) => (
+        <motion.div
+          className="flex flex-col gap-4 text-sm font-mono relative md:w-1/3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {texts[lang].experiences.map((exp) => (
             <RippleButton
               key={exp.id}
               exp={exp}
@@ -101,21 +114,41 @@ export default function Experience({ lang = "en" }) {
               setSelected={setSelected}
             />
           ))}
-        </div>
+        </motion.div>
 
         {/* Détail de l'expérience */}
         <div className="flex-1 md:w-2/3 mt-8 md:mt-0">
-          <h3 className="text-xl font-bold">
+          <motion.h3 
+            className="text-xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             {current.role}{" "}
             <span className="text-foreground">
               {lang === "en" ? "@" : "à"}{" "}
               <span className="text-teal-400">{current.company}</span>
             </span>
-          </h3>
-          <p className="text-base text-gray-400 mt-1">{current.period}</p>
-          <p className="mt-4 text-base text-foreground/90 text-blue-gray">
+          </motion.h3>
+          <motion.p 
+            className="text-base text-gray-400 mt-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {current.period}
+          </motion.p>
+          <motion.p 
+            className="mt-4 text-base text-foreground/90 text-blue-gray"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             {current.description}
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
