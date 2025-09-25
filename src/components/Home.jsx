@@ -91,7 +91,7 @@ export default function Home({ lang = "en" }) {
 
         {/* Bouton CV / Resume */}
         <a
-          href="/Alexandre_Couté_Resume.pdf" // mets ton vrai fichier PDF dans /public
+          href={lang === "en" ? "/Resume_Alexandre_Couté.pdf" : "/CV_Alexandre_Couté_FR.pdf"}
           download
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 hover:bg-gray-300 font-medium text-teal-400 transition-all"
         >
