@@ -14,6 +14,14 @@ export default function Projects({ lang = "en" }) {
       projects: [
         {
           id: 1,
+          title: "BrazilingoScrollBlocker",
+          description: "A quirky cross-device project: a mobile Instagram blocker that can only be unlocked from your PC by mimicking an international meme's pose and translating it out loud into Portuguese.",
+          tech: ["Vocal Reading", "Raspberry Pi", "AI", "Android", "Server"],
+          image: "/Cometobrasil.jpeg",
+          github: "https://github.com/Alexandre1422/BrazilingoScrollBlocker"
+        },
+        {
+          id: 2,
           title: "2048 RL",
           description:
             "A reinforcement learning project that plays the 2048 game.",
@@ -22,7 +30,23 @@ export default function Projects({ lang = "en" }) {
           github: "https://github.com/Alexandre1422/2048_rl",
         },
         {
-          id: 2,
+          id: 3,
+          title: "Sissi's Duolitaire",
+          description: "A Spider Solitaire game with solo/multiplayer modes (duel, coop, relais).",
+          tech: ["Godot", "Node.js", "Multiplatform", "Multiplayer", "Server"],
+          image: "/duolitaire.png",
+          github: "https://github.com/Alexandre1422/SissisDuolitaire"
+        },
+        {
+          id: 4,
+          title: "PetCat",
+          description: "A software that displays a Desktop Cat (Tamagotchi-like).",
+          tech: ["C#"],
+          image: "/Cat.png",
+          github: "https://github.com/Alexandre1422/DesktopCat"
+        },
+        {
+          id: 5,
           title: "Christmas Calendar",
           description: "An interactive Christmas calendar web app.",
           tech: ["JavaScript", "CSS", "HTML"],
@@ -31,7 +55,7 @@ export default function Projects({ lang = "en" }) {
           demo: "https://christmascalendaralex.netlify.app/",
         },
         {
-          id: 3,
+          id: 6,
           title: "Cube Compute Shader",
           description: "A group project for 3D cube rendering forked on ComputeShaderStudio.",
           tech: ["GDScript", "Godot", "Compute Shaders"],
@@ -39,13 +63,22 @@ export default function Projects({ lang = "en" }) {
           github: "https://github.com/mahboubiabdelkader/ComputeShaderStudio",
         },
         {
-          id: 4,
-          title: "NerdzByNight",
+          id: 7,
+          title: "NerdzByNight (NDLI2025)",
           description: "A group web project made on one night for nuitdelinfo.com.",
           tech: ["JavaScript", "PHP", "CSS", "HTML"],
           image: "/NerdzByNight.png",
           github: "https://github.com/EwannDelacre/NerdzByNight",
           demo: "https://nuitdelinfo-nine.vercel.app/",
+        },
+        {
+          id: 8,
+          title: "SINJ_LABUBU_67 (NDLI2026)",
+          description: "A better and bigger group web project made on one night for nuitdelinfo.com. Personnal role : Team leader and Hidden Snake's dev.",
+          tech: ["JavaScript", "CSS", "HTML"],
+          image: "/sinj.jpg",
+          github: "https://github.com/Alexandre1422/SINJ_LABUBU_67",
+          demo: "https://sinj-labubu-67-nine.vercel.app/",
         }
       ]
     },
@@ -53,15 +86,38 @@ export default function Projects({ lang = "en" }) {
       projects: [
         {
           id: 1,
+          title: "BrazilingoScrollBlocker",
+          description: "Un projet original multiplateforme : un bloqueur Instagram mobile qui ne peut être déverrouillé depuis votre PC qu’en imitant la pose d’un mème international et en la traduisant à voix haute en portugais.",
+          tech: ["Lecture Vocale", "Raspberry Pi", "IA", "Android", "Server"],
+          image: "/Cometobrasil.jpeg",
+          github: "https://github.com/Alexandre1422/BrazilingoScrollBlocker"
+        },
+        {
+          id: 2,
           title: "2048 RL",
-          description:
-            "Un projet de reinforcement learning qui joue au jeu 2048.",
+          description: "Un projet de reinforcement learning qui joue au jeu 2048.",
           tech: ["Python", "NumPy"],
           image: "/2048.png",
           github: "https://github.com/Alexandre1422/2048_rl",
         },
         {
-          id: 2,
+          id: 3,
+          title: "Sissi's Duolitaire",
+          description: "Un jeu de Spider Solitaire avec des modes solo/multijoueur (duel, coop, relais).",
+          tech: ["Godot", "Node.js", "Multiplatform", "Multiplayer", "Server"],
+          image: "/duolitaire.png",
+          github: "https://github.com/Alexandre1422/SissisDuolitaire"
+        },
+        {
+          id: 4,
+          title: "DesktopCat",
+          description: "Un logiciel qui affiche un chat sur le bureau (de type Tamagotchi).",
+          tech: ["C#"],
+          image: "/Cat.png",
+          github: "https://github.com/Alexandre1422/DesktopCat"
+        },
+        {
+          id: 5,
           title: "Calendrier de l'Avent",
           description: "Une application web interactive de calendrier de l'Avent.",
           tech: ["JavaScript", "CSS", "HTML"],
@@ -70,7 +126,7 @@ export default function Projects({ lang = "en" }) {
           demo: "https://christmascalendaralex.netlify.app/",
         },
         {
-          id: 3,
+          id: 6,
           title: "Cube Compute Shader",
           description: "Un projet de groupe de rendu 3D de cubes forké sur ComputeShaderStudio.",
           tech: ["GDScript", "Godot", "Compute Shaders"],
@@ -78,13 +134,22 @@ export default function Projects({ lang = "en" }) {
           github: "https://github.com/mahboubiabdelkader/ComputeShaderStudio"
         },
         {
-          id: 4,
-          title: "NerdzByNight",
-          description: "Un projet web de groupe réalisé en une nuit pour nuitdelinfo.com.",
+          id: 7,
+          title: "NerdzByNight (NDLI2025)",
+          description: "Un projet web collectif réalisé en une nuit pour nuitdelinfo.com.",
           tech: ["JavaScript", "PHP", "CSS", "HTML"],
           image: "/NerdzByNight.png",
           github: "https://github.com/EwannDelacre/NerdzByNight",
           demo: "https://nuitdelinfo-nine.vercel.app/",
+        },
+        {
+          id: 8,
+          title: "SINJ_LABUBU_67 (NDLI2026)",
+          description: "Un projet web collectif plus ambitieux et de meilleure qualité, réalisé en une nuit pour nuitdelinfo.com. Mon rôle : chef d’équipe et développeur du Hidden Snake.",
+          tech: ["JavaScript", "CSS", "HTML"],
+          image: "/sinj.jpg",
+          github: "https://github.com/Alexandre1422/SINJ_LABUBU_67",
+          demo: "https://sinj-labubu-67-nine.vercel.app/",
         }
       ]
     },

@@ -1,70 +1,78 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Header({ setLang }) {
-  const [language, setLanguage] = useState("EN");
-  const [clicked, setClicked] = useState(false); // pour effet de highlight
+  const [language, setLanguage] = useState("FR");
+  const [clicked, setClicked] = useState(false);
 
   const toggleLanguage = () => {
-    const newLang = language === "EN" ? "FR" : "EN";
+    const newLang = language === "FR" ? "EN" : "FR";
     setLanguage(newLang);
     if (setLang) setLang(newLang.toLowerCase());
 
-    // Effet de highlight
     setClicked(true);
     setTimeout(() => setClicked(false), 300);
   };
 
   const highlightColor = "rgb(99, 255, 219)";
 
-  // Traductions des liens
-  // Traductions des liens (texte affiché)
   const navTexts = {
     EN: [
       { label: "Home", id: "home" },
       { label: "About", id: "about" },
       { label: "Experience", id: "experience" },
-      { label: "Projects", id: "projects" }
+      { label: "Projects", id: "projects" },
+      { label: "Research", id: "research" }
     ],
     FR: [
       { label: "Accueil", id: "home" },
       { label: "À propos", id: "about" },
       { label: "Expérience", id: "experience" },
-      { label: "Projets", id: "projects" }
+      { label: "Projets", id: "projects" },
+      { label: "Recherche", id: "research" }
     ]
   };
 
-
   return (
-    <header className="bg-gray-900 text-white shadow-md fixed w-full z-50 font-sans">
+    <header className="bg-gray-900 text-white shadow-md fixed w-full z-50 font-sans top-0 left-0">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-3">
 
         {/* Logo + Navigation */}
         <div className="flex items-center space-x-6">
-          <h1 className="text-xl font-bold">Alexandre Couté</h1>
+          {/* Remplacement du lien <a> classique par HashLink */}
+          <HashLink 
+            smooth 
+            to="/#home" 
+            className="hover:text-teal-400 transition-colors cursor-pointer"
+          >
+            <h1 className="text-xl font-bold">Alexandre Couté</h1>
+          </HashLink>
           <nav>
             <ul className="hidden md:flex space-x-4 text-sm">
               {navTexts[language].map((item, i) => (
                 <li key={i}>
-                  <a
-                    href={`#${item.id}`}   // 🔥 toujours en anglais
-                    className="transition-colors"
+                  {/* Remplacement du lien <a> classique par HashLink */}
+                  <HashLink
+                    smooth
+                    to={`/#${item.id}`} // Force le passage par la racine "/" avant de cibler l'ID
+                    className="transition-colors cursor-pointer"
                     style={{ color: "white" }}
                     onMouseEnter={e => (e.currentTarget.style.color = highlightColor)}
                     onMouseLeave={e => (e.currentTarget.style.color = "white")}
                   >
-                    {item.label}   {/* 🔥 traduit */}
-                  </a>
+                    {item.label}
+                  </HashLink>
                 </li>
               ))}
             </ul>
           </nav>
         </div>
-        {/* icon: SiLeetcode, href: "https://leetcode.com/u/twigtwig/" */}
+        
         {/* Icônes + Language switch */}
         <div className="flex items-center space-x-3">
-          {[{ icon: FaEnvelope, href: "mailto:alexandre.coute@outlook.fr" },
+          {[
+            { icon: FaEnvelope, href: "mailto:alexandre.coute@outlook.fr" },
             { icon: FaGithub, href: "https://github.com/Alexandre1422" },
             { icon: FaLinkedin, href: "https://www.linkedin.com/in/alexandre-coute/" }
           ].map(({ icon: Icon, href }, i) => (

@@ -57,8 +57,8 @@ export default function About({ lang = "en" }) {
             Université de Bretagne Occidentale
           </span>
           . At the moment, I am seeking for a{" "}
-          <strong className="font-bold text-white">6-month internship</strong>{" "}
-          starting in March 2026 (and maybe a full-time position afterwards).
+          <strong className="font-bold text-white">full-time, Master's level position in development (embedded, software, etc.)</strong>{" "}
+          starting in September 2026.
         </>
       ),
       techIntro: "Here are some technologies I have been working with:",
@@ -66,38 +66,41 @@ export default function About({ lang = "en" }) {
         "C / C++",
         "Python",
         "Ada",
-        "Java",
+        "Java / C#",
         "Go",
+        "Godot",
         "Embedded Linux",
         "RTOS",
         "FPGA (VHDL/Verilog)",
-        "JavaScript / React / VueJS",
         "TensorFlow / PyTorch",
+        "JavaScript / React / VueJS",
       ],
     },
     fr: {
       title: "/ à propos de moi",
       description: (
         <>
-          Je suis actuellement en dernière année de{" "}
+          Je viens tout juste d'être diplômée d'un{" "}
           <strong className="font-extrabold text-white">
-            Master Logiciels pour Systèmes Embarqués
+            Master Logiciels pour Systèmes Embarqués (mention Bien)
           </strong>{" "}
           à{" "}
           <span className="text-teal-400 font-semibold">
             l&apos;Université de Bretagne Occidentale
           </span>
-          . En ce moment, je suis à la recherche d&apos;un{" "}
-          <strong className="font-bold text-white">stage de 6 mois</strong>{" "}
-          à partir de mars 2026 (et peut-être d&apos;un poste à temps plein par la suite).
+          . Je suis actuellement à la recherche d&apos;un{" "}
+          <strong className="font-bold text-white">poste à temps plein de niveau bac+5 dans le développement (embarqué, logiciel, etc.)</strong>{" "}
+          à partir de septembre 2026.
         </>
       ),
       techIntro: "Voici quelques technologies avec lesquelles j’ai travaillé :",
       technologies: [
         "C / C++",
         "Python",
-        "Java",
+        "Ada",
+        "Java / C#",
         "Go",
+        "Godot",
         "Linux embarqué",
         "RTOS",
         "FPGA (VHDL/Verilog)",

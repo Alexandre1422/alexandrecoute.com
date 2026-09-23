@@ -1,0 +1,139 @@
+#projects {
+  margin: auto;
+  max-width: 1000px;
+  padding: 80px 0;
+}
+
+/* === EN-TÊTE DE SECTION (Le titre "/ hardware" avec la ligne) === */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e2e8f0; /* Couleur claire du texte */
+  white-space: nowrap;
+}
+
+.section-header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-left: 20px;
+}
+
+/* === GRILLE DES PROJETS === */
+.projects-grid {
+  display: grid;
+  /* Crée 3 colonnes de taille égale, s'adapte sur mobile */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* === APPARENCE DES CARTES === */
+/* === APPARENCE DES CARTES === */
+.projects-card {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15); 
+  border-radius: 12px;
+  overflow: hidden; 
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+  height: auto !important;
+  min-height: 100%;
+  padding: 0 !important; /* <-- Force la suppression des marges internes */
+}
+
+.projects-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.project-image-container {
+  width: 100% !important;
+  height: 220px !important;
+  background-color: #1a1f2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important; /* Détruit tout padding résiduel */
+  margin: 0 !important;
+  overflow: hidden; 
+}
+
+.project-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Force l'image à zoomer pour remplir le cadre */
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 12px 12px 0 0; /* Optionnel : arrondit les coins supérieurs de l'image pour épouser la carte */
+}
+
+/* === ICÔNE DOSSIER (Si pas d'image) === */
+.card-header {
+  padding: 30px 20px 0 20px;
+}
+
+.folder-icon {
+  color: #a8b2d1;
+}
+
+/* === TYPOGRAPHIE ET ESPACEMENTS INTERNES === */
+.card-title {
+  padding: 20px 20px 0 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.card-badge-link {
+  padding: 5px 20px 0 20px;
+  font-size: 0.8rem;
+  color: #64ffda;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-desc {
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #8892b0;
+  flex-grow: 1;
+  height: auto !important; /* Force l'adaptation au texte pour éviter la superposition */
+  min-height: min-content;
+  margin-bottom: 15px; /* Ajoute un espace avant le lien */
+}
+
+.full-log-link {
+  padding: 0 20px;
+  font-size: 0.9rem;
+  color: #64ffda; /* Couleur cyan visible sur votre 2ème image */
+  font-weight: 500;
+  margin-top: auto; 
+  margin-bottom: 15px;
+}
+
+/* Ajout d'une flèche automatique à la fin du lien */
+.full-log-link::after {
+  content: " \2192"; /* Flèche vers la droite (->) */
+}
+
+.card-tech {
+  padding: 0 20px 20px 20px;
+  font-size: 0.8rem;
+  color: #5c6c8f;
+  font-family: monospace;
+}

@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Research from "./components/Research";
+import ResearchLog from "./components/ResearchLog";
 
 function App() {
-  const [lang, setLang] = useState("en"); // État global du langage
+  const [lang, setLang] = useState("fr"); // État global du langage
 
   const footerTexts = {
     en: {
@@ -27,10 +30,21 @@ function App() {
 
       {/* Main content */}
       <main className="flex-grow pt-20 p-6">
-        <Home lang={lang} />
-        <About lang={lang} />
-        <Experience lang={lang} />
-        <Projects lang={lang} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home lang={lang} />
+                <About lang={lang} />
+                <Experience lang={lang} />
+                <Projects lang={lang} />
+                <Research lang={lang} />
+              </>
+            }
+          />
+          <Route path="/research/:projectId" element={<ResearchLog lang={lang} />} />
+        </Routes>
       </main>
 
       {/* Footer */}
@@ -38,6 +52,7 @@ function App() {
         <p>{footerTexts[lang].built}</p>
         <p>{footerTexts[lang].rights}</p>
       </footer>
+      
     </div>
   );
 }
