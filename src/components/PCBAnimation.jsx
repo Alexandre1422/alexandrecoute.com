@@ -205,7 +205,7 @@ const PCBAnimation = () => {
       });
     };
 
-    const animate = (w) => {
+    const animate = () => { // <-- Supprime le paramètre 'w' ici
       ctx.globalCompositeOperation = 'destination-out';
       ctx.fillStyle = 'rgba(0, 0, 0, 0.04)'; 
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -214,8 +214,11 @@ const PCBAnimation = () => {
 
       traces.forEach(t => t.update());
       traces = traces.filter(t => !t.dead);
-      const isMobile = w < 768;
-      const tracesLimit = isMobile ? 1 : 10;
+      
+      // <-- Utilise canvas.width directement
+      const isMobile = canvas.width < 768; 
+      const tracesLimit = isMobile ? 3 : 10;
+      
       if (chips.length > 0) {
         while (traces.length < tracesLimit) {
           traces.push(new Trace());
@@ -223,7 +226,7 @@ const PCBAnimation = () => {
       }
 
       drawChips();
-      animationFrameId = requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate); // Passe bien l'appel récursif
     };
 
     animate();
