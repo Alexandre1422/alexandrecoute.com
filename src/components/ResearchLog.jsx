@@ -25,7 +25,7 @@ export default function ResearchLog({ lang = "en" }) {
           description: "A comprehensive study and simulation of centralized and decentralized Multi-Robot Task Allocation (MRTA) algorithms for autonomous drone fleets facing engine failures.",
           image: "/coppelia.png",
           buttons: [
-            { label: "Full Report", url: "/Simulation de mission collaborative de drones intégrant des pannes.pdf", icon: <FaFilePdf /> },
+            { label: "Full Report", url: "/rapportMRTA.pdf", icon: <FaFilePdf /> },
             { label: "Demo (With Failures)", url: "https://youtu.be/NKEQDP3DuyE", icon: <FaImage /> },
             { label: "Demo (Standard)", url: "https://youtu.be/7jnT0Cy0X2E", icon: <FaImage /> }
           ],
@@ -77,7 +77,7 @@ export default function ResearchLog({ lang = "en" }) {
           image: "/esp32_setup.jpg",
           buttons: [
             { label: "Full Report", url: "/rapport_stage_m2-1.pdf", icon: <FaFilePdf /> },
-            { label: "Scientific Poster", url: "/Soutenance Stage M2.pdf", icon: <FaImage /> },
+            { label: "Scientific Poster", url: "/poster_embedded.pdf", icon: <FaImage /> },
             { label: "Source Code", url: "https://github.com/Alexandre1422/BearingFaultDetection_Stage_M2", icon: <FaGithub /> }
           ],
           logs: [
@@ -131,7 +131,7 @@ export default function ResearchLog({ lang = "en" }) {
           description: "Étude et simulation approfondie d'algorithmes d'allocation de tâches multi-robots (MRTA) centralisés et décentralisés pour des flottes de drones confrontées à des pannes moteur.",
           image: "/coppelia.png",
           buttons: [
-            { label: "Rapport Complet", url: "/Simulation de mission collaborative de drones intégrant des pannes.pdf", icon: <FaFilePdf /> },
+            { label: "Rapport Complet", url: "/rapportMRTA.pdf", icon: <FaFilePdf /> },
             { label: "Démo (Pannes)", url: "https://youtu.be/NKEQDP3DuyE", icon: <FaImage /> },
             { label: "Démo (Standard)", url: "https://youtu.be/7jnT0Cy0X2E", icon: <FaImage /> }
           ],
@@ -183,7 +183,7 @@ export default function ResearchLog({ lang = "en" }) {
           image: "/embeddeddetection.png",
           buttons: [
             { label: "Rapport Complet", url: "/rapport_stage_m2-1.pdf", icon: <FaFilePdf /> },
-            { label: "Poster Scientifique", url: "/Soutenance Stage M2.pdf", icon: <FaImage /> },
+            { label: "Poster Scientifique", url: "/poster_embedded.pdf", icon: <FaImage /> },
             { label: "Code Source", url: "https://github.com/Alexandre1422/BearingFaultDetection_Stage_M2", icon: <FaGithub /> }
           ],
           logs: [
