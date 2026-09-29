@@ -43,7 +43,7 @@ export default function Research({ lang = "en" }) {
         },
         {
           title: "Modèles non-supervisés pour la maintenance prédictive embarquée",
-          desc: "Si tu ne fournis pas d'image, le composant affichera l'icône de dossier à la place.",
+          desc: "Étude de modèles d'autoencodeurs et de Random Forest pour l'analyse de signal dans le contexte de la maintenance prédictive",
           techStack: "TensorFlowLite, ESP32, TinyML, Python",
           link: "/research/embedded_predictive_maintenance",
           image: "embeddeddetection.png"
